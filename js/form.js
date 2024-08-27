@@ -1,10 +1,12 @@
-const form = document.querySelector(".counter__form");
-const ageInputElement = form.querySelector("#age");
-const heightInputElement = form.querySelector("#height");
-const weightInputElement = form.querySelector("#weight");
+const form = document.querySelector('.counter__form');
+const ageInputElement = form.querySelector('#age');
+const heightInputElement = form.querySelector('#height');
+const weightInputElement = form.querySelector('#weight');
 
-const submitButtonElement = document.querySelector(".form__submit-button");
-const resetButtonElement = document.querySelector(".form__reset-button");
+const submitButtonElement = form.querySelector('.form__submit-button');
+const resetButtonElement = form.querySelector('.form__reset-button');
+
+const resultElement = document.querySelector('.counter__result');
 
 const enableButton = (button) => {
   button.removeAttribute("disabled");
@@ -14,7 +16,7 @@ const disableButton = (button) => {
   button.setAttribute("disabled", "");
 };
 
-form.addEventListener("change", () => {
+form.addEventListener('change', () => {
   if (
     ageInputElement.value.length > 0 &&
     heightInputElement.value.length > 0 &&
@@ -35,3 +37,11 @@ form.addEventListener("change", () => {
     disableButton(resetButtonElement);
   }
 });
+
+submitButtonElement.addEventListener('click', () => {
+    resultElement.classList.remove("counter__result--hidden");
+    
+    //либо обновляет расчёты, выводится актуальная информация.
+});
+
+ 
