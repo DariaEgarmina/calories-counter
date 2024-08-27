@@ -38,7 +38,8 @@ form.addEventListener('change', () => {
   }
 });
 
-submitButtonElement.addEventListener('click', () => {
+submitButtonElement.addEventListener('click', (evt) => {
+    evt.preventDefault();
     resultElement.classList.remove("counter__result--hidden");
     
     //либо обновляет расчёты, выводится актуальная информация.
