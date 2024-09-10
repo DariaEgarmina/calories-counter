@@ -1,11 +1,7 @@
-// Функции для активации / дизактивации кнопок
+// Функция для активации / дизактивации кнопок
 
-const enableButton = (button) => {
-  button.removeAttribute('disabled');
+const toggleButtonState = (button, disabled) => {
+  button.disabled = disabled;
 };
 
-const disableButton = (button) => {
-  button.setAttribute('disabled', '');
-};
-
-export { enableButton, disableButton };
+export { toggleButtonState };
