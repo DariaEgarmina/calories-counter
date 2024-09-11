@@ -1,3 +1,5 @@
+import { addSpaces } from './util.js';
+
 const activityRatio = {
   'activity-minimal': 1.2,
   'activity-low': 1.375,
@@ -26,11 +28,13 @@ const calculateCalories = (weightInputElement, heightInputElement, ageInputEleme
   const radioId = document.querySelector('[name="activity"]:checked').id;
   const result = Math.round(n * activityRatio[radioId]);
 
-  const percent = (result / 100) * 15;
-  const weightLossNorm = Math.round(result - percent);
-  const weightGainNorm = Math.round(result + percent);
+  addSpaces
 
-  caloriesNormElement.textContent = result;
+  const percent = (result / 100) * 15;
+  const weightLossNorm = addSpaces(Math.round(result - percent), ' ', 3);
+  const weightGainNorm = addSpaces(Math.round(result + percent), ' ', 3);
+
+  caloriesNormElement.textContent = addSpaces(result, ' ', 3);
   caloriesMinimalElement.textContent = weightLossNorm;
   caloriesMaximalElement.textContent = weightGainNorm;
 };
