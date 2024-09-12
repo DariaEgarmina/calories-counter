@@ -28,13 +28,11 @@ const calculateCalories = (weightInputElement, heightInputElement, ageInputEleme
   const radioId = document.querySelector('[name="activity"]:checked').id;
   const result = Math.round(n * activityRatio[radioId]);
 
-  addSpaces
-
   const percent = (result / 100) * 15;
-  const weightLossNorm = addSpaces(Math.round(result - percent), ' ', 3);
-  const weightGainNorm = addSpaces(Math.round(result + percent), ' ', 3);
+  const weightLossNorm = addSpaces(Math.round(result - percent));
+  const weightGainNorm = addSpaces(Math.round(result + percent));
 
-  caloriesNormElement.textContent = addSpaces(result, ' ', 3);
+  caloriesNormElement.textContent = addSpaces(result);
   caloriesMinimalElement.textContent = weightLossNorm;
   caloriesMaximalElement.textContent = weightGainNorm;
 };

@@ -1,10 +1,10 @@
 //Функция для добавления пробелов в числа
 
-const addSpaces = (number, space, afterElement) => {
+const addSpaces = (number, space = ' ', afterElement = 3) => {
   const reverseArray = number.toString().split('').reverse();
 
   const reverseArrayLength = reverseArray.length;
-  let newArray = [];
+  const newArray = [];
 
   for (let i = 1; reverseArray.length > 0; i++) {
     if (reverseArray.length > 0) {
@@ -15,10 +15,7 @@ const addSpaces = (number, space, afterElement) => {
     }
   }
 
-  const resultArray = newArray.reverse();
-  const resultString = resultArray.join('');
-
-  return resultString;
+  return newArray.reverse().join('');
 };
 
 export { addSpaces };
